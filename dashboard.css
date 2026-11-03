@@ -1,0 +1,177 @@
+/* Lintel Dashboard page: the dashboard mockup in the hero. Loaded after style.css and product.css. */
+
+.dash-stage { position: relative; width: 100%; max-width: 620px; z-index: 2; }
+
+.dash {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  font: 12px var(--mono);
+  color: var(--ink);
+}
+
+.dash-bar {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background: var(--ink); color: var(--paper);
+  padding: 9px 12px; font: 10.5px var(--mono); letter-spacing: 0.04em;
+}
+.dash-bar b { font-weight: 500; }
+.dash-bar .live { display: inline-flex; align-items: center; gap: 6px; opacity: .8; }
+.dash-bar .live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--hot); animation: dash-pulse 1.6s ease-in-out infinite; }
+@keyframes dash-pulse { 50% { opacity: .25; } }
+
+.dash-kpis { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line-2); }
+.kpi { padding: 10px 12px 12px; border-left: 1px solid var(--line-2); position: relative; }
+.kpi:first-child { border-left: 0; }
+.kpi .k-lbl { font: 9.5px var(--mono); color: var(--ink-3); letter-spacing: .04em; display: flex; justify-content: space-between; }
+.kpi .k-lbl i { width: 7px; height: 7px; display: inline-block; background: var(--ink); font-style: normal; }
+.kpi .k-lbl i.hot { background: var(--hot); }
+.kpi .k-lbl i.ghost { background: var(--ghost); }
+.kpi .k-val { font: 700 26px/1 var(--sans); letter-spacing: -0.03em; margin-top: 8px; font-variant-numeric: tabular-nums; }
+.kpi .k-val small { font: 10px var(--mono); color: var(--ink-3); margin-left: 3px; letter-spacing: 0; }
+.kpi.bump .k-val { animation: dash-bump 420ms cubic-bezier(.16, 1, .3, 1); }
+@keyframes dash-bump { 40% { color: var(--hot); transform: translateY(-2px); } }
+
+.dash-hello { padding: 10px 12px; border-bottom: 1px solid var(--line-2); display: flex; justify-content: space-between; align-items: baseline; }
+.dash-hello b { font: 700 13px var(--sans); letter-spacing: -0.01em; }
+.dash-hello span { font-size: 10px; color: var(--ink-3); }
+
+.dash-feed-head { display: flex; justify-content: space-between; padding: 10px 12px 6px; font: 700 11px var(--sans); letter-spacing: .02em; }
+.dash-feed-head a { font: 10px var(--mono); color: var(--hot); text-decoration: none; }
+.dash-feed { list-style: none; margin: 0; padding: 0 0 4px; }
+.dash-feed li { display: grid; grid-template-columns: 30px 1fr auto; gap: 10px; align-items: center; padding: 8px 12px; border-top: 1px solid var(--line); }
+.dash-feed .ico { width: 30px; height: 30px; border: 1px solid var(--line-2); display: grid; place-items: center; }
+.dash-feed .ico svg { width: 16px; height: 16px; stroke: var(--ink); fill: none; stroke-width: 1.4; }
+.dash-feed .t { font: 600 11.5px var(--sans); letter-spacing: -0.005em; text-transform: uppercase; }
+.dash-feed .s { font-size: 10px; color: var(--ink-3); margin-top: 2px; display: flex; gap: 8px; align-items: center; }
+.dash-feed .s .d-tag { display: inline-flex; align-items: center; gap: 4px; }
+.dash-feed .s .d-tag::before { content: ""; width: 6px; height: 6px; background: var(--hot); }
+.dash-feed .s .d-tag.ok::before { background: var(--ink); }
+.dash-feed .s .d-tag.wait::before { background: var(--ghost); }
+.dash-feed .when { font-size: 10px; color: var(--ink-3); }
+.dash-feed li.new { animation: dash-in 500ms cubic-bezier(.16, 1, .3, 1); }
+@keyframes dash-in { from { opacity: 0; transform: translateY(-6px); background: rgba(250, 54, 0, .08); } }
+
+/* the floating sign-off queue that overlaps the dashboard */
+.dash-queue {
+  position: absolute; right: -28px; bottom: -34px; width: 272px; z-index: 3;
+  background: var(--paper); border: 1px solid var(--ink);
+  box-shadow: 0 22px 50px -16px rgba(0, 0, 0, 0.3);
+}
+.dash-queue .q-head { display: flex; justify-content: space-between; background: var(--ink); color: var(--paper); padding: 8px 10px; font: 10px var(--mono); letter-spacing: .04em; }
+.dash-queue .q-item { padding: 9px 10px 10px; border-top: 1px solid var(--line); }
+.dash-queue .q-item:first-of-type { border-top: 0; }
+.dash-queue .q-title { font: 700 11px var(--sans); text-transform: uppercase; letter-spacing: .01em; }
+.dash-queue .q-diff { font: 10px var(--mono); color: var(--ink-3); margin-top: 3px; }
+.dash-queue .q-diff s { color: var(--ghost); }
+.dash-queue .q-diff b { color: var(--ink); font-weight: 500; }
+.dash-queue .q-row { display: flex; justify-content: space-between; align-items: center; margin-top: 7px; gap: 8px; }
+.dash-queue .q-meter { flex: 1; height: 4px; background: var(--line); position: relative; }
+.dash-queue .q-meter span { position: absolute; inset: 0 auto 0 0; background: var(--ink); }
+.dash-queue .q-who { font: 9.5px var(--mono); color: var(--ink-3); }
+.dash-queue button {
+  border: 1px solid var(--hot); background: var(--hot); color: #fff; font: 10px var(--mono); letter-spacing: .04em;
+  padding: 4px 8px; cursor: pointer; transition: background .2s, color .2s;
+}
+.dash-queue button:hover { background: #d92f00; }
+.dash-queue .q-item.done { opacity: .55; }
+.dash-queue .q-item.done button { background: transparent; color: var(--ink); border-color: var(--line-2); cursor: default; }
+.dash-queue .q-empty { padding: 14px 10px; font: 10px var(--mono); color: var(--ink-3); }
+
+@media (max-width: 1100px) {
+  .dash-queue { position: relative; right: auto; bottom: auto; width: auto; margin: 14px 0 0 auto; max-width: 320px; }
+}
+@media (max-width: 640px) {
+  .dash-kpis { grid-template-columns: repeat(2, 1fr); }
+  .kpi:nth-child(3) { border-left: 0; }
+  .kpi:nth-child(n+3) { border-top: 1px solid var(--line-2); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dash-bar .live::before, .kpi.bump .k-val, .dash-feed li.new { animation: none; }
+}
+
+/* ===================================================================== */
+/* Motion layer (dashboard.js). Everything below is scoped to .dash-page. */
+/* ===================================================================== */
+
+/* ---- preloader: a sheet being set out --------------------------------- */
+.dash-loader { position: fixed; inset: 0; z-index: 900; background: var(--paper); display: grid; place-items: center; }
+.dash-loader .dl-box { width: min(420px, 80vw); display: grid; gap: 14px; }
+.dash-loader .dl-top { display: flex; justify-content: space-between; font: 11px var(--mono); color: var(--ink-3); letter-spacing: .04em; }
+.dash-loader .dl-pct { font: 800 clamp(64px, 9vw, 120px)/.85 var(--sans); letter-spacing: -0.05em; font-variant-numeric: tabular-nums; }
+.dash-loader .dl-bar { height: 2px; background: var(--line); position: relative; overflow: hidden; }
+.dash-loader .dl-bar span { position: absolute; inset: 0; background: var(--ink); transform-origin: left; transform: scaleX(0); }
+.dash-loader .dl-bar.hot span { background: var(--hot); }
+.dash-loader .dl-ticks { height: 10px; background: repeating-linear-gradient(90deg, var(--line-2) 0 1px, transparent 1px 8px); }
+
+/* ---- masked line reveals ------------------------------------------------ */
+.dash-page .dl-mask { overflow: hidden; padding-bottom: .05em; margin-bottom: -.05em; }
+.dash-page.js .hp-content > *, .dash-page.js .dash-stage, .dash-page.js .cad-badge { visibility: hidden; }
+
+/* ---- hosts marquee ------------------------------------------------------ */
+.dash-page .hosts-track { overflow: hidden; padding: 0; gap: 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.dash-page .hosts-run { display: flex; align-items: center; gap: 40px; padding-left: 40px; width: max-content; will-change: transform; }
+
+/* ---- pinned key features ------------------------------------------------ */
+.dash-page .df-track { position: relative; }
+.dash-page .df-sticky {
+  position: sticky; top: calc(var(--hdr) + var(--gut));
+  height: calc(100vh - var(--hdr) - var(--gut) * 2); min-height: 520px;
+  display: flex; flex-direction: column; overflow: hidden; background: var(--paper);
+}
+.dash-page .feat-tabs-bar { position: relative; flex: none; }
+.dash-page .feat-tab-btn { z-index: 1; background: transparent !important; transition: color .3s; }
+.dash-page .feat-tab-btn .tab-num, .dash-page .feat-tab-btn .tab-title { transition: color .35s; }
+.dash-page .feat-tab-btn.active .tab-title { color: var(--paper); }
+.dash-page .feat-tab-btn:not(.active):hover .tab-title { color: var(--hot); }
+.dash-page .df-slider { position: absolute; top: 0; bottom: 0; left: 0; width: 20%; background: var(--ink); z-index: 0; pointer-events: none; }
+
+.dash-page .df-body { flex: 1; min-height: 0; display: grid; grid-template-columns: 96px minmax(0, 1fr) minmax(0, 1.2fr); }
+.dash-page .df-rail { border-right: 1px solid var(--line-2); position: relative; display: grid; place-items: center;
+  background: repeating-linear-gradient(180deg, var(--line-2) 0 1px, transparent 1px 12px) right 0 top 0 / 10px 100% no-repeat; }
+.dash-page .df-index { font: 12px var(--mono); color: var(--ink); overflow: hidden; height: 16px; }
+.dash-page .df-index span { display: block; }
+
+.dash-page .df-copy { position: relative; overflow: hidden; border-right: 1px solid var(--line-2); }
+.dash-page .df-ghost { position: absolute; right: 18px; bottom: -0.12em; font: 800 clamp(120px, 15vw, 220px)/1 var(--sans); letter-spacing: -0.06em;
+  color: transparent; -webkit-text-stroke: 1px var(--line-2); pointer-events: none; user-select: none; }
+.dash-page .df-copy-inner { height: 100%; will-change: transform; }
+.dash-page .df-block { height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 18px; padding: 40px 44px; }
+.dash-page .df-block .lbl.hot { color: var(--hot); }
+.dash-page .df-block h3 { font-size: clamp(28px, 2.6vw, 44px); line-height: .98; text-transform: uppercase; letter-spacing: -0.03em; max-width: 520px; }
+.dash-page .df-block p { color: var(--ink-2); font-size: 16px; line-height: 1.45; max-width: 460px; }
+.dash-page .df-block .stat { font: 11px var(--mono); color: var(--ink-3); letter-spacing: .03em; display: flex; gap: 10px; align-items: center; }
+.dash-page .df-block .stat::before { content: ""; width: 8px; height: 8px; background: var(--hot); }
+
+.dash-page .df-art { position: relative; display: grid; place-items: center; padding: 40px;
+  background-color: #eae9e3; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 40px 40px; }
+.dash-page .df-art .feat-visual { position: relative; }
+.dash-page .df-art .cross { position: absolute; font: 14px var(--mono); color: var(--ink-3); }
+.dash-page .df-art .x1 { left: 16px; top: 12px; } .dash-page .df-art .x2 { right: 16px; top: 12px; }
+.dash-page .df-art .x3 { left: 16px; bottom: 12px; } .dash-page .df-art .x4 { right: 16px; bottom: 12px; }
+.dash-page .df-scan { position: absolute; left: 0; right: 0; height: 1px; background: var(--hot); top: 50%; transform-origin: left; transform: scaleX(0); pointer-events: none; z-index: 2; }
+.dash-page .df-progress { flex: none; height: 3px; background: var(--line); position: relative; }
+.dash-page .df-progress span { position: absolute; inset: 0; background: var(--hot); transform-origin: left; transform: scaleX(0); }
+
+/* ---- steps, faq, cta ---------------------------------------------------- */
+.dash-page .step-card { transition: background .35s; }
+.dash-page .step-card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; background: var(--hot); transform: scaleX(0); transform-origin: left; transition: transform .5s cubic-bezier(.16, 1, .3, 1); }
+.dash-page .step-card:hover { background: #f7f6f1; }
+.dash-page .step-card:hover::before { transform: scaleX(1); }
+.dash-page .step-card .step-visual-slot svg { transition: transform .5s cubic-bezier(.16, 1, .3, 1); }
+.dash-page .step-card:hover .step-visual-slot svg { transform: translateY(-4px); }
+.dash-page .faq-answer { max-height: none; opacity: 1; height: 0; transition: none; }
+.dash-page .faq-item.open .faq-answer { max-height: none; }
+.dash-page .faq-btn:hover .faq-btn-title { color: var(--hot); }
+.dash-page .faq-btn-title { transition: color .25s; }
+.dash-page .faq-icon { transition: transform .45s cubic-bezier(.16, 1, .3, 1), color .3s; }
+
+@media (max-width: 1100px) {
+  .dash-page .df-body { grid-template-columns: 56px minmax(0, 1fr); }
+  .dash-page .df-art { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dash-page .dash-loader { display: none; }
+  .dash-page.js .hp-content > *, .dash-page.js .dash-stage, .dash-page.js .cad-badge { visibility: visible; }
+}

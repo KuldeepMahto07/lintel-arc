@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Lintel Dashboard · The whole office on one sheet</title>
+  <meta name="description" content="Lintel Dashboard is where your team reviews what Lintel found across every model: open issues, fixes waiting for sign-off, and a full record of what changed and who approved it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=a42ac9b6">
+  <link rel="stylesheet" href="product.css?v=20261103">
+  <link rel="stylesheet" href="dashboard.css?v=20261103">
+</head>
+<body class="dash-page">
+<script>document.body.classList.add("js");</script>
+
+<div class="dash-loader" aria-hidden="true">
+  <div class="dl-box">
+    <div class="dl-top"><span>SETTING OUT THE SHEET</span><span>LINTEL · DASHBOARD</span></div>
+    <div class="dl-pct"><span id="dl-num">0</span>%</div>
+    <div class="dl-bar"><span></span></div>
+    <div class="dl-bar hot"><span></span></div>
+    <div class="dl-ticks"></div>
+  </div>
+</div>
+<div class="cur" aria-hidden="true"><div class="cur-dot"></div></div>
+
+<header class="hdr">
+  <a class="hdr-logo" href="index.html#top" aria-label="Lintel">
+    <svg viewBox="0 0 40 40" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h32v6H4z"/><path d="M8 16v20M32 16v20M14 16v20M26 16v20"/><path d="M4 10l6-6h32l-6 6M36 16l6-6v6"/></svg>
+    <span>LINTEL</span>
+  </a>
+  <nav class="hdr-nav">
+    <div class="dd">
+      <a href="lintel-dashboard.html" class="has-sub" style="background:var(--ink); color:var(--paper);">PRODUCT</a>
+      <div class="dd-menu">
+        <a href="lintel-chat-window.html">LINTEL CHAT WINDOW</a>
+        <a href="lintel-dashboard.html" style="color:var(--hot); font-weight:700;">LINTEL DASHBOARD</a>
+      </div>
+    </div>
+    <a href="index.html#pricing">PRICING</a>
+    <div class="dd">
+      <a href="resources.html" class="has-sub">RESOURCES</a>
+      <div class="dd-menu">
+        <a href="resources.html#field-notes">FIELD NOTES</a>
+        <a href="resources.html#ai-in-practice">AI IN PRACTICE</a>
+        <a href="resources.html#drawing-workflows">DRAWING WORKFLOWS</a>
+      </div>
+    </div>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html" class="hdr-cta">CONTACT US <i>→</i></a>
+  </nav>
+</header>
+
+<main class="frame-wrap">
+
+<!-- ===== HERO ===== -->
+<section class="hero-product">
+  <div class="ruler ruler-top"></div><div class="ruler ruler-bottom"></div>
+  <div class="ruler-v ruler-left"></div><div class="ruler-v ruler-right"></div>
+  <span class="cross c-tl">+</span><span class="cross c-tr">+</span><span class="cross c-bl">+</span><span class="cross c-br">+</span>
+
+  <div class="hp-main">
+    <div class="hp-content">
+      <span class="lbl">[02] THE OFFICE VIEW OF EVERY MODEL</span>
+      <h1 class="split">THE WHOLE OFFICE<br>ON ONE SHEET</h1>
+      <p class="hp-sub">Lintel Dashboard is where your team reviews what Lintel found across every model: open issues, fixes waiting for sign-off, and a full record of what changed and who approved it.</p>
+      <div class="hp-actions">
+        <a href="#features" class="btn-primary">DISCOVER MORE <i>→</i></a>
+        <a href="#how" class="btn-secondary">HOW IT WORKS</a>
+      </div>
+    </div>
+
+    <div class="hp-viewport">
+      <div class="cad-badge">LINTEL DASHBOARD · STUDIO NORTH · 6 ACTIVE PROJECTS</div>
+      <svg class="hp-cad-art" viewBox="0 0 600 450" fill="none" stroke="#282828" aria-hidden="true">
+        <g opacity="0.22" stroke-dasharray="3 4">
+          <line x1="40" y1="20" x2="40" y2="430"/><line x1="300" y1="20" x2="300" y2="430"/><line x1="560" y1="20" x2="560" y2="430"/>
+          <line x1="20" y1="70" x2="580" y2="70"/><line x1="20" y1="380" x2="580" y2="380"/>
+        </g>
+        <g opacity="0.35" stroke-width="3">
+          <path d="M60 90H250V250H60Z"/><path d="M350 60H540V200H350Z"/><path d="M330 260H560V410H330Z"/><path d="M70 300H260V400H70Z"/>
+        </g>
+        <g opacity="0.5" fill="#fa3600" stroke="none">
+          <rect x="150" y="160" width="9" height="9"/><rect x="430" y="120" width="9" height="9"/><rect x="460" y="330" width="9" height="9"/>
+        </g>
+      </svg>
+
+      <div class="dash-stage">
+        <div class="dash" id="dash">
+          <div class="dash-bar"><b>LINTEL DASHBOARD</b><span class="live">LIVE · SYNCED 2 MIN AGO</span></div>
+          <div class="dash-kpis">
+            <div class="kpi" id="kpi-projects"><div class="k-lbl">PROJECTS <i></i></div><div class="k-val">6</div></div>
+            <div class="kpi" id="kpi-issues"><div class="k-lbl">OPEN ISSUES <i class="hot"></i></div><div class="k-val">23</div></div>
+            <div class="kpi" id="kpi-waiting"><div class="k-lbl">TO SIGN OFF <i class="ghost"></i></div><div class="k-val">3</div></div>
+            <div class="kpi" id="kpi-applied"><div class="k-lbl">APPLIED <i></i></div><div class="k-val">14<small>/ WK</small></div></div>
+          </div>
+          <div class="dash-hello"><b>Good morning, Priya</b><span>3 CHANGES NEED AN APPROVER</span></div>
+          <div class="dash-feed-head"><span>RECENT ACTIVITY</span><a href="#features">AUDIT LOG →</a></div>
+          <ul class="dash-feed" id="dash-feed">
+            <li><span class="ico"><svg viewBox="0 0 20 20"><path d="M4 17V3h9l3 3v11z"/><path d="M8 8h5M8 11h5"/></svg></span>
+              <div><div class="t">Door under firm minimum</div><div class="s"><span class="d-tag">CLINIC GF</span><span>D-03 · 760 &lt; 813 MM</span></div></div><span class="when">9:14</span></li>
+            <li><span class="ico"><svg viewBox="0 0 20 20"><path d="M3 15h4v-3h4V9h4V5h2"/></svg></span>
+              <div><div class="t">Stair riser fix applied</div><div class="s"><span class="d-tag ok">RESIDENCE 04</span><span>20 RISERS · 171 MM</span></div></div><span class="when">8:52</span></li>
+            <li><span class="ico"><svg viewBox="0 0 20 20"><path d="M4 4h12v12H4z"/><path d="M4 9h12"/></svg></span>
+              <div><div class="t">Rule proposed by the assistant</div><div class="s"><span class="d-tag wait">FIRM RULES</span><span>DOOR WIDTH ≥ 900 MM</span></div></div><span class="when">8:31</span></li>
+            <li><span class="ico"><svg viewBox="0 0 20 20"><path d="M2 8h16M2 12h16"/><path d="M6 5v10M14 5v10"/></svg></span>
+              <div><div class="t">Corridor narrower than required</div><div class="s"><span class="d-tag">CLINIC GF</span><span>ADVICE ONLY · MOVE WALLS</span></div></div><span class="when">YDAY</span></li>
+          </ul>
+        </div>
+        <aside class="dash-queue" id="dash-queue" aria-label="Sign-off queue">
+          <div class="q-head"><span>SIGN-OFF QUEUE (<span id="q-count">3</span>)</span><span>2 APPROVALS</span></div>
+          <div class="q-item"><div class="q-title">Widen Exam 1 door</div><div class="q-diff">CLEAR WIDTH <s>760</s> → <b>813 MM</b></div>
+            <div class="q-row"><div class="q-meter"><span style="width:50%"></span></div><span class="q-who">1 OF 2</span><button type="button">APPROVE</button></div></div>
+          <div class="q-item"><div class="q-title">Deepen stair 1 treads</div><div class="q-diff">TREAD <s>254</s> → <b>279 MM</b></div>
+            <div class="q-row"><div class="q-meter"><span style="width:0%"></span></div><span class="q-who">0 OF 2</span><button type="button">APPROVE</button></div></div>
+          <div class="q-item"><div class="q-title">Rename on-call room</div><div class="q-diff">NAME <s>ONCALL</s> → <b>ON-CALL ROOM</b></div>
+            <div class="q-row"><div class="q-meter"><span style="width:50%"></span></div><span class="q-who">1 OF 2</span><button type="button">APPROVE</button></div></div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <div class="hosts-strip">
+    <div class="hosts-strip-label">COLLECTS FROM YOUR CAD SUITE:</div>
+    <div class="hosts-track">
+      <div class="hosts-run">
+        <div class="host-badge live"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z M9 9h6v6H9z"/></svg> RHINO 8</div>
+        <div class="host-badge"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z M2 17l10 5 10-5 M2 12l10 5 10-5"/></svg> AUTODESK REVIT</div>
+        <div class="host-badge"><svg viewBox="0 0 24 24"><path d="M3 3l18 9-18 9V3z"/></svg> SKETCHUP PRO</div>
+        <div class="host-badge"><svg viewBox="0 0 24 24"><path d="M4 4h7v16H4z M13 4h7v7h-7z M13 13h7v7h-7z"/></svg> GRAPHISOFT ARCHICAD</div>
+        <div class="host-badge"><svg viewBox="0 0 24 24"><path d="M12 3v18 M3 12h18"/></svg> VECTORWORKS</div>
+        <div class="host-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg> AUTOCAD</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KEY FEATURES (PINNED, SCROLL TO ADVANCE) ===== -->
+<section class="product-features" id="features">
+  <div class="pf-head">
+    <div class="lbl">KEY FEATURES</div>
+    <h2 class="split">ONE PLACE TO DECIDE<br>WHAT REACHES THE MODEL</h2>
+    <p>Lintel checks every sync against your firm's rules. The dashboard is where those findings become decisions: who fixes what, who signs it off, and what the drawing looked like before.</p>
+  </div>
+  <div class="df-track" id="df-track">
+    <div class="df-sticky">
+      <div class="feat-tabs-bar" role="tablist" aria-label="Key features">
+        <span class="df-slider" aria-hidden="true"></span>
+        <button class="feat-tab-btn active" role="tab" aria-selected="true"><span class="tab-num">[01]</span><span class="tab-title">ALL PROJECTS</span></button>
+        <button class="feat-tab-btn" role="tab" aria-selected="false"><span class="tab-num">[02]</span><span class="tab-title">SIGN-OFF QUEUE</span></button>
+        <button class="feat-tab-btn" role="tab" aria-selected="false"><span class="tab-num">[03]</span><span class="tab-title">AUDIT LOG</span></button>
+        <button class="feat-tab-btn" role="tab" aria-selected="false"><span class="tab-num">[04]</span><span class="tab-title">ROLES</span></button>
+        <button class="feat-tab-btn" role="tab" aria-selected="false"><span class="tab-num">[05]</span><span class="tab-title">FIRM RULES</span></button>
+      </div>
+      <div class="df-body">
+        <div class="df-rail"><div class="df-index" aria-hidden="true"><span id="df-index">[01]</span></div></div>
+        <div class="df-copy">
+          <span class="df-ghost" id="df-ghost" aria-hidden="true">01</span>
+          <div class="df-copy-inner" id="df-copy">
+            <article class="df-block"><span class="lbl hot">ALL PROJECTS</span><h3>Every model on one grid</h3>
+              <p>Each model your team syncs shows up as a sheet with its own plan thumbnail, open issue count and changes waiting. Sort by last sync or by trouble, and archive what's finished.</p>
+              <span class="stat">UPDATES ON EVERY SYNC FROM THE CAD PLUGIN</span></article>
+            <article class="df-block"><span class="lbl hot">SIGN-OFF QUEUE</span><h3>Nothing moves unsigned</h3>
+              <p>Fixes from the issue list and edits the assistant drafts land in one queue across all projects. Each shows the element, the value before and after, and the reason, ready to approve or reject.</p>
+              <span class="stat">APPROVE ALL ALWAYS ASKS TO CONFIRM</span></article>
+            <article class="df-block"><span class="lbl hot">AUDIT LOG</span><h3>A record you can show a client</h3>
+              <p>Every sync, decision, applied edit and revert is written down with the person and the time. Any applied change can be reverted, and the revert is logged too.</p>
+              <span class="stat">FILTER BY PROJECT, PERSON OR ACTION · EXPORT CSV</span></article>
+            <article class="df-block"><span class="lbl hot">ROLES</span><h3>The right person decides</h3>
+              <p>Owners, admins, approvers, members and viewers each see the buttons they can use. Two-approval mode makes a change wait for a second approver before it reaches the model.</p>
+              <span class="stat">ROLE CHECKED ON THE SERVER FOR EVERY ACTION</span></article>
+            <article class="df-block"><span class="lbl hot">FIRM RULES</span><h3>Your office standard, as numbers</h3>
+              <p>Keep your firm's rules in one table: a value, what it applies to and the section it comes from. Import them as CSV, switch one off for a project, and activate the rules the assistant suggests.</p>
+              <span class="stat">NUMBERS AND REFERENCES ONLY · NEVER CODE TEXT</span></article>
+          </div>
+        </div>
+        <div class="df-art">
+          <span class="cross x1">+</span><span class="cross x2">+</span><span class="cross x3">+</span><span class="cross x4">+</span>
+          <div class="feat-visual"><svg viewBox="0 0 460 300" fill="none" stroke="#282828" stroke-width="1.2" id="feat-svg" aria-hidden="true"></svg></div>
+        </div>
+      </div>
+      <span class="df-scan" id="df-scan" aria-hidden="true"></span>
+      <div class="df-progress" aria-hidden="true"><span id="df-progress"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="product-steps" id="how">
+  <div class="steps-head">
+    <div><div class="lbl">WORKFLOW</div><h2 class="split">FROM SYNC TO SIGN-OFF,<br>IN 3 STEPS</h2></div>
+    <p>The dashboard never edits a drawing on its own. It shows what Lintel found, lets the right person decide, and keeps the record.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num-badge"><span class="lbl">STEP [01]</span><svg class="step-icon" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></div>
+      <h3>Sync a model</h3>
+      <p>Each designer connects their CAD app with a personal token. Every save sends rooms, doors, stairs and walls to the dashboard, and the checks run straight away.</p>
+      <div class="step-visual-slot"><svg viewBox="0 0 240 120" fill="none" stroke="#282828" stroke-width="1.2">
+        <rect x="20" y="30" width="70" height="60" fill="#fff" stroke="#282828" stroke-width="1.5"/><text x="30" y="64" font-family="Geist Mono" font-size="9" fill="#282828" stroke="none">RHINO 8</text>
+        <path d="M96 60h44" stroke="#fa3600" stroke-width="1.5" stroke-dasharray="4 3"/><path d="M134 55l7 5-7 5" stroke="#fa3600" stroke-width="1.5"/>
+        <rect x="148" y="30" width="72" height="60" fill="#282828"/><text x="158" y="58" font-family="Geist Mono" font-size="9" fill="#fff" stroke="none">19 ELEMENTS</text><text x="158" y="74" font-family="Geist Mono" font-size="9" fill="#fa3600" stroke="none">9 ISSUES</text>
+      </svg></div>
+    </div>
+    <div class="step-card">
+      <div class="step-num-badge"><span class="lbl">STEP [02]</span><svg class="step-icon" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16"/><path d="M8 12h8M12 8v8"/></svg></div>
+      <h3>Review what's flagged</h3>
+      <p>Each issue names the rule, the measured value, the required value and the section it comes from. One click drafts the fix as a before and after.</p>
+      <div class="step-visual-slot"><svg viewBox="0 0 240 120" fill="none" stroke="#282828" stroke-width="1.2">
+        <rect x="30" y="22" width="180" height="76" fill="#fff" stroke="#282828"/><rect x="42" y="34" width="12" height="12" fill="#fa3600" stroke="none"/>
+        <text x="62" y="44" font-family="Geist Mono" font-size="9" font-weight="700" fill="#282828" stroke="none">DOOR CLEAR WIDTH</text>
+        <text x="42" y="64" font-family="Geist Mono" font-size="9" fill="#fa3600" stroke="none">760 MM &lt; 813 MM</text>
+        <text x="42" y="82" font-family="Geist Mono" font-size="8" fill="#70706c" stroke="none">REF §1010.1.1 · VERIFY EDITION</text>
+      </svg></div>
+    </div>
+    <div class="step-card">
+      <div class="step-num-badge"><span class="lbl">STEP [03]</span><svg class="step-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <h3>Sign off and record</h3>
+      <p>An approver signs the change. The plugin applies it in one undo step, and the audit log keeps who decided, when, and the values before and after.</p>
+      <div class="step-visual-slot"><svg viewBox="0 0 240 120" fill="none" stroke="#282828" stroke-width="1.2">
+        <rect x="30" y="20" width="180" height="80" fill="#fff" stroke="#282828"/><text x="42" y="38" font-family="Geist Mono" font-size="8.5" font-weight="700" fill="#282828" stroke="none">AUDIT · 09:16</text>
+        <line x1="42" y1="48" x2="198" y2="48" stroke="#d6d5cf"/>
+        <text x="42" y="64" font-family="Geist Mono" font-size="8.5" fill="#282828" stroke="none">APPROVED BY PRIYA SEN</text>
+        <text x="42" y="80" font-family="Geist Mono" font-size="8.5" fill="#70706c" stroke="none">APPLIED IN RHINO 8 · 1 UNDO STEP</text>
+        <rect x="182" y="26" width="16" height="16" fill="#282828"/><path d="M186 34l3 3 5-6" stroke="#fff" stroke-width="1.5"/>
+      </svg></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQS ===== -->
+<section class="product-faq" id="faq">
+  <div class="faq-title-col">
+    <div class="lbl">FAQS</div>
+    <h2 class="split">QUESTIONS<br>FROM THE<br>STUDIO FLOOR</h2>
+    <p style="color:var(--ink-2); font-size:15px; margin-top:12px;">What partners and project leads usually ask before they put the dashboard in front of the team.</p>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item open"><button class="faq-btn" aria-expanded="true"><span class="faq-btn-title">Who can approve a change?</span><span class="faq-icon">+</span></button>
+      <div class="faq-answer"><div class="faq-answer-inner">Only people you give the Approver, Admin or Owner role. Members can propose fixes and comment, viewers can read. The server checks the role on every action, so hiding a button is never the only lock.</div></div></div>
+    <div class="faq-item"><button class="faq-btn" aria-expanded="false"><span class="faq-btn-title">Can a change need two people?</span><span class="faq-icon">+</span></button>
+      <div class="faq-answer"><div class="faq-answer-inner">Yes. Turn on two-approval mode and a change only reaches the model after two different approvers sign it. The queue shows "1 of 2" until the second one does.</div></div></div>
+    <div class="faq-item"><button class="faq-btn" aria-expanded="false"><span class="faq-btn-title">What does the audit log keep?</span><span class="faq-icon">+</span></button>
+      <div class="faq-answer"><div class="faq-answer-inner">Every sync, proposal, decision, applied edit, revert, rule change, invite and sign-in, with who did it and when. Filter it by project, person or action, and export it as CSV for a review meeting.</div></div></div>
+    <div class="faq-item"><button class="faq-btn" aria-expanded="false"><span class="faq-btn-title">Do we have to use the built-in code values?</span><span class="faq-icon">+</span></button>
+      <div class="faq-answer"><div class="faq-answer-inner">No. The starter rules are examples. Edit them, import your office standard as CSV, or override a value for one project, such as a longer travel distance in a sprinklered building. Lintel stores numbers and section references, never code text.</div></div></div>
+    <div class="faq-item"><button class="faq-btn" aria-expanded="false"><span class="faq-btn-title">Does the CAD app need to be open?</span><span class="faq-icon">+</span></button>
+      <div class="faq-answer"><div class="faq-answer-inner">Only for the edit itself. You can review and approve from any browser; the plugin applies approved changes the next time the model syncs, and the dashboard tells you when no plugin is connected.</div></div></div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta" id="cta">
+  <div class="cta-art"><svg id="fort-svg" viewBox="0 0 700 330"></svg></div>
+  <div class="cta-grid">
+    <h2 class="cta-h">PUT EVERY MODEL ON ONE SHEET</h2>
+    <div class="fcol"><div class="lbl">COMPANY</div><a href="index.html#top">Home</a><a href="about.html">About us</a><a href="contact.html">Contact us</a></div>
+    <div class="fcol"><div class="lbl">PRODUCT</div><a href="lintel-chat-window.html">Lintel Chat Window</a><a href="lintel-dashboard.html" style="color:var(--hot);">Lintel Dashboard</a><a href="index.html#pricing">Pricing</a></div>
+    <div class="fcol"><div class="lbl">RESOURCES</div><a href="resources.html#field-notes">Field notes</a><a href="resources.html#ai-in-practice">AI in practice</a><a href="resources.html#drawing-workflows">Drawing workflows</a></div>
+    <div class="fsub">
+      <div class="lbl">BOOK A DEMO / PILOT</div>
+      <p>Leave your work email and we'll walk your team through the dashboard with one of your own models.</p>
+      <form onsubmit="event.preventDefault();this.querySelector('input').value='';this.querySelector('input').placeholder='Thanks, we\'ll reach out.';"><input type="email" placeholder="Your work email" aria-label="Email" required><button>→</button></form>
+    </div>
+    <div class="fcol"><div class="lbl">STUDIO</div><p>Drawn and coded locally.<br>Study build, not published.</p></div>
+    <div class="fcol"><div class="lbl">SAY HELLO</div><p>hello@lintel.example</p></div>
+    <div class="fcol"><div class="lbl">HOSTS</div><p>Rhino 8 (active)<br>Revit &amp; ArchiCAD (next)</p></div>
+  </div>
+  <svg class="wordmark" viewBox="0 0 1200 230" aria-label="LINTEL"></svg>
+  <div class="foot-base"><span>©2026 LINTEL. PRIVATE STUDY BUILD.</span><span>RULE CHECKS · APPROVALS · AUDIT</span></div>
+</section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="art.js?v=f8f3b11a"></script>
+<script src="art2.js?v=73b60f24"></script>
+<script src="mouse.js?v=20261103b"></script>
+<script src="dashboard.js?v=20261103"></script>
+</body>
+</html>

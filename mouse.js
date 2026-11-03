@@ -21,6 +21,7 @@ document.fonts.ready.then(() => {
 
   // ---- hero: CAD crosshair, coordinates, extents, drag selection -----------------------
   const hero = $(".hero"), card = $(".hcard");
+  if (!hero) return; // only the home page has the CAD hero; other pages just get the cursor
   const H = $(".cad-h"), V = $(".cad-v"), XY = $(".cad-xy"), hint = $(".cad-hint"), sel = $(".cad-sel");
   const extY = $(".cad-ext-y"), extX = $(".cad-ext-x");
   const guides = { top: $(".g-top"), bot: $(".g-bot"), left: $(".g-left"), right: $(".g-right") };

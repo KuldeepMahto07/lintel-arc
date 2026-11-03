@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Lintel · Resources</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=a42ac9b6">
+  <link rel="stylesheet" href="pages.css?v=20261103b">
+</head>
+<body class="pg js-pg">
+
+<div class="cur" aria-hidden="true"><div class="cur-dot"></div></div>
+
+<header class="hdr">
+  <a class="hdr-logo" href="index.html#top" aria-label="Lintel home">
+    <svg viewBox="0 0 40 40" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h32v6H4z"/><path d="M8 16v20M32 16v20M14 16v20M26 16v20"/><path d="M4 10l6-6h32l-6 6M36 16l6-6v6"/></svg>
+    <span>LINTEL</span>
+  </a>
+  <nav class="hdr-nav">
+    <div class="dd"><a href="lintel-dashboard.html" class="has-sub">PRODUCT</a><div class="dd-menu"><a href="lintel-chat-window.html">LINTEL CHAT WINDOW</a><a href="lintel-dashboard.html">LINTEL DASHBOARD</a></div></div>
+    <a href="index.html#pricing">PRICING</a>
+    <div class="dd"><a href="resources.html" class="has-sub" style="background:var(--ink); color:var(--paper);">RESOURCES</a><div class="dd-menu"><a href="resources.html#field-notes">FIELD NOTES</a><a href="resources.html#ai-in-practice">AI IN PRACTICE</a><a href="resources.html#drawing-workflows">DRAWING WORKFLOWS</a></div></div>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html" class="hdr-cta">CONTACT US <i>→</i></a>
+  </nav>
+</header>
+
+<main class="frame-wrap">
+
+<section class="ar-head">
+  <div class="ar-title">
+    <div class="ar-meta" data-reveal><a href="resources.html">← RESOURCES</a><b id="ar-cat"></b><span id="ar-date"></span><span id="ar-read"></span></div>
+    <h1 id="ar-h1">Article</h1>
+    <p class="pg-sub" id="ar-ex" data-reveal style="color:var(--ink-2); font-size:17px; line-height:1.45; max-width:520px;"></p>
+  </div>
+  <div class="ar-art"><svg id="ar-svg" aria-hidden="true"></svg></div>
+</section>
+
+<section class="ar-body">
+  <aside class="ar-side" data-reveal>
+    <span>IN THIS SERIES</span>
+    <div id="ar-series" style="display:grid; gap:10px;"></div>
+  </aside>
+  <article class="ar-text" id="ar-text"></article>
+  <div class="ar-gut"></div>
+</section>
+
+<a class="ar-next" id="ar-next" href="resources.html">
+  <div><span class="lbl">NEXT NOTE</span><h2 id="ar-next-t" style="margin-top:12px;">Back to resources</h2></div>
+  <span class="arr" aria-hidden="true">→</span>
+</a>
+
+<section class="cta" id="cta">
+  <div class="cta-art"><svg id="fort-svg" viewBox="0 0 700 330"></svg></div>
+  <div class="cta-grid">
+    <h2 class="cta-h">SEE WHAT LINTEL CAN DO IN YOUR MODEL</h2>
+    <div class="fcol"><div class="lbl">COMPANY</div><a href="index.html#top">Home</a><a href="about.html">About us</a><a href="contact.html">Contact us</a></div>
+    <div class="fcol"><div class="lbl">PRODUCT</div><a href="lintel-chat-window.html">Lintel Chat Window</a><a href="lintel-dashboard.html">Lintel Dashboard</a><a href="index.html#pricing">Pricing</a></div>
+    <div class="fcol"><div class="lbl">RESOURCES</div><a href="resources.html#field-notes">Field notes</a><a href="resources.html#ai-in-practice">AI in practice</a><a href="resources.html#drawing-workflows">Drawing workflows</a></div>
+    <div class="fsub">
+      <div class="lbl">NEW NOTES BY EMAIL</div>
+      <p>One short note when something new is published. No other mail.</p>
+      <form onsubmit="event.preventDefault();this.querySelector('input').value='';this.querySelector('input').placeholder='Thanks, noted.';"><input type="email" placeholder="Your email" aria-label="Email" required><button>→</button></form>
+    </div>
+    <div class="fcol"><div class="lbl">STUDIO</div><p>Drawn and coded locally.<br>Study build, not published.</p></div>
+    <div class="fcol"><div class="lbl">SAY HELLO</div><p>hello@lintel.example</p></div>
+    <div class="fcol"><div class="lbl">HOSTS</div><p>Rhino 8 (active)<br>Revit &amp; ArchiCAD (next)</p></div>
+  </div>
+  <svg class="wordmark" viewBox="0 0 1200 230" aria-label="LINTEL"></svg>
+  <div class="foot-base"><span>©2026 LINTEL. PRIVATE STUDY BUILD.</span><span>RULE CHECKS · APPROVALS · AUDIT</span></div>
+</section>
+
+</main>
+
+<script src="resources-data.js?v=20261103"></script>
+<script>
+// Fill the article before the motion layer splits the headline into lines.
+(() => {
+  const posts = window.LINTEL_POSTS, cats = window.LINTEL_CATS;
+  const slug = decodeURIComponent(location.hash.slice(1));
+  const i = Math.max(0, posts.findIndex((p) => p.slug === slug));
+  const p = posts[i];
+  document.title = `${p.title} · Lintel`;
+  const $ = (s) => document.querySelector(s);
+  $("#ar-h1").textContent = p.title;
+  $("#ar-ex").textContent = p.excerpt;
+  $("#ar-cat").textContent = cats[p.cat].toUpperCase();
+  $("#ar-date").textContent = new Date(p.date + "T00:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }).toUpperCase();
+  $("#ar-read").textContent = `${p.read} MIN READ`;
+  const text = $("#ar-text");
+  p.body.forEach((para) => {
+    let node;
+    if (para.startsWith("## ")) { node = document.createElement("h2"); node.textContent = para.slice(3); }
+    else if (para.startsWith("> ")) { node = document.createElement("blockquote"); node.textContent = para.slice(2); }
+    else { node = document.createElement("p"); node.textContent = para; }
+    text.append(node);
+  });
+  const series = $("#ar-series");
+  posts.filter((q) => q.cat === p.cat).forEach((q) => {
+    const a = document.createElement("a");
+    a.href = `article.html#${q.slug}`;
+    a.textContent = q.title;
+    if (q.slug === p.slug) a.style.color = "var(--hot)";
+    series.append(a);
+  });
+  const next = posts[(i + 1) % posts.length];
+  $("#ar-next").href = `article.html#${next.slug}`;
+  $("#ar-next-t").textContent = next.title;
+  window.__ARTICLE = p;
+  addEventListener("hashchange", () => location.reload());
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="art.js?v=f8f3b11a"></script>
+<script src="mouse.js?v=20261103b"></script>
+<script src="pages.js?v=20261103b"></script>
+<script>
+(() => {
+  const svg = document.querySelector("#ar-svg");
+  LP.vignette(svg, window.__ARTICLE.seed);
+  document.addEventListener("lp:start", () => {
+    LP.drawIn(svg, { duration: 1.6, stagger: 0.012 });
+    gsap.from("#ar-text > *", { y: 24, autoAlpha: 0, duration: 0.8, stagger: 0.06, ease: "power3.out", delay: 0.4 });
+  }, { once: true });
+})();
+</script>
+</body>
+</html>

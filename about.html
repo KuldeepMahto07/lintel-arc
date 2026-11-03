@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>About · Lintel</title>
+  <meta name="description" content="Lintel is built by architects and software people who wanted drawings checked on every sync, with a person deciding every change.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=a42ac9b6">
+  <link rel="stylesheet" href="pages.css?v=20261103b">
+</head>
+<body class="pg js-pg">
+
+<div class="pg-loader" aria-hidden="true"><div class="pl-box"><div class="pl-top"><span>SETTING OUT THE PLAN</span><span>LINTEL</span></div><div class="pl-pct"><span id="pl-num">0</span>%</div><div class="pl-bar"><span></span></div></div></div>
+<div class="cur" aria-hidden="true"><div class="cur-dot"></div></div>
+
+<header class="hdr">
+  <a class="hdr-logo" href="index.html#top" aria-label="Lintel home">
+    <svg viewBox="0 0 40 40" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h32v6H4z"/><path d="M8 16v20M32 16v20M14 16v20M26 16v20"/><path d="M4 10l6-6h32l-6 6M36 16l6-6v6"/></svg>
+    <span>LINTEL</span>
+  </a>
+  <nav class="hdr-nav">
+    <div class="dd"><a href="lintel-dashboard.html" class="has-sub">PRODUCT</a><div class="dd-menu"><a href="lintel-chat-window.html">LINTEL CHAT WINDOW</a><a href="lintel-dashboard.html">LINTEL DASHBOARD</a></div></div>
+    <a href="index.html#pricing">PRICING</a>
+    <div class="dd"><a href="resources.html" class="has-sub">RESOURCES</a><div class="dd-menu"><a href="resources.html#field-notes">FIELD NOTES</a><a href="resources.html#ai-in-practice">AI IN PRACTICE</a><a href="resources.html#drawing-workflows">DRAWING WORKFLOWS</a></div></div>
+    <a href="about.html" style="background:var(--ink); color:var(--paper);">ABOUT</a>
+    <a href="contact.html" class="hdr-cta">CONTACT US <i>→</i></a>
+  </nav>
+</header>
+
+<main class="frame-wrap">
+
+<!-- a plan that draws itself as you scroll -->
+<section class="ab-hero" id="ab-hero">
+  <div class="ruler ruler-top"></div><div class="ruler ruler-bottom"></div><div class="ruler-v ruler-left"></div><div class="ruler-v ruler-right"></div>
+  <span class="cross" style="left:10px;top:6px;">+</span><span class="cross" style="right:10px;top:6px;">+</span>
+  <svg class="ab-plan" id="ab-plan" aria-label="Line drawing of a courtyard plan"></svg>
+  <span class="ab-cap">PLAN · COURTYARD STUDIO · 1:200</span>
+  <span class="ab-cue">SCROLL <i id="ab-cue"></i></span>
+  <h1 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">About Lintel</h1>
+</section>
+
+<!-- statement: words ink in as you scroll -->
+<section class="ab-statement" id="ab-statement">
+  <div class="ab-pin">
+    <h2 id="ab-words">Drawings should be about the building, not the checklist.</h2>
+  </div>
+</section>
+
+<section class="ab-mission">
+  <div class="ab-art"><svg id="ab-art" aria-hidden="true"></svg></div>
+  <div class="ab-list">
+    <h2 class="split">WHAT WE BELIEVE</h2>
+    <div data-stagger>
+      <div class="ab-row"><div><b>Check every sync, not every deadline</b><span>Rules run each time the model changes, so a problem is found the day it is drawn.</span></div>
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></span></div>
+      <div class="ab-row"><div><b>Show the number and its source</b><span>Every issue names the measured value, the required value and the section it comes from.</span></div>
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 18h16M6 18V8M18 18V8M4 8h16"/><path d="M10 12h4"/></svg></span></div>
+      <div class="ab-row"><div><b>Nothing changes without a person</b><span>The assistant proposes. An approver decides. The plugin applies it as one undo step.</span></div>
+        <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></span></div>
+      <div class="ab-row"><div><b>Keep the record</b><span>Who proposed, who approved, what changed and when, kept for the life of the project.</span></div>
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z"/><path d="M9 10h6M9 14h6M9 18h3"/></svg></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="ab-team">
+  <div class="ab-team-head">
+    <h2 class="split">WHO BUILDS<br>LINTEL</h2>
+    <p data-reveal>A small studio of architects and software people, working with pilot firms who use it on live projects. These are the disciplines in the room when a feature is decided.</p>
+  </div>
+  <div class="ab-cells" data-stagger>
+    <div class="ab-cell"><svg data-draw data-glyph="plan" aria-hidden="true"></svg><div class="who"><b>Architecture</b><span>Practising architects decide what gets checked and how an issue should read on a busy afternoon.</span></div></div>
+    <div class="ab-cell"><svg data-draw data-glyph="code" aria-hidden="true"></svg><div class="who"><b>Code review</b><span>People who sit on the other side of plan check, keeping every starter rule a number with a source.</span></div></div>
+    <div class="ab-cell"><svg data-draw data-glyph="build" aria-hidden="true"></svg><div class="who"><b>Engineering</b><span>The checker, the plugins and the dashboard, built so an edit can always be traced and undone.</span></div></div>
+    <div class="ab-cell"><svg data-draw data-glyph="pilot" aria-hidden="true"></svg><div class="who"><b>Pilot firms</b><span>Studios using Lintel on real drawings, who tell us when a rule or a screen gets in the way.</span></div></div>
+    <div class="ab-cell"><svg data-draw data-glyph="people" aria-hidden="true"></svg><div class="who"><b>Design</b><span>The drawing-sheet look, the plan canvas and every word on the screen, kept plain and calm.</span></div></div>
+    <div class="ab-cell"><svg data-draw data-glyph="audit" aria-hidden="true"></svg><div class="who"><b>Support</b><span>A person reads every message. Pilot firms get an answer within one working day.</span></div></div>
+  </div>
+</section>
+
+<section class="cta" id="cta">
+  <div class="cta-art"><svg id="fort-svg" viewBox="0 0 700 330"></svg></div>
+  <div class="cta-grid">
+    <h2 class="cta-h">SEE WHAT LINTEL CAN DO IN YOUR MODEL</h2>
+    <div class="fcol"><div class="lbl">COMPANY</div><a href="index.html#top">Home</a><a class="on" href="about.html">About us</a><a href="contact.html">Contact us</a></div>
+    <div class="fcol"><div class="lbl">PRODUCT</div><a href="lintel-chat-window.html">Lintel Chat Window</a><a href="lintel-dashboard.html">Lintel Dashboard</a><a href="index.html#pricing">Pricing</a></div>
+    <div class="fcol"><div class="lbl">RESOURCES</div><a href="resources.html#field-notes">Field notes</a><a href="resources.html#ai-in-practice">AI in practice</a><a href="resources.html#drawing-workflows">Drawing workflows</a></div>
+    <div class="fsub">
+      <div class="lbl">BOOK A DEMO / PILOT</div>
+      <p>Leave your work email and we'll arrange a live run inside one of your firm's drawings.</p>
+      <form onsubmit="event.preventDefault();this.querySelector('input').value='';this.querySelector('input').placeholder='Thanks, we\'ll reach out.';"><input type="email" placeholder="Your work email" aria-label="Email" required><button>→</button></form>
+    </div>
+    <div class="fcol"><div class="lbl">STUDIO</div><p>Drawn and coded locally.<br>Study build, not published.</p></div>
+    <div class="fcol"><div class="lbl">SAY HELLO</div><p>hello@lintel.example</p></div>
+    <div class="fcol"><div class="lbl">HOSTS</div><p>Rhino 8 (active)<br>Revit &amp; ArchiCAD (next)</p></div>
+  </div>
+  <svg class="wordmark" viewBox="0 0 1200 230" aria-label="LINTEL"></svg>
+  <div class="foot-base"><span>©2026 LINTEL. PRIVATE STUDY BUILD.</span><span>RULE CHECKS · APPROVALS · AUDIT</span></div>
+</section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="art.js?v=f8f3b11a"></script>
+<script src="mouse.js?v=20261103b"></script>
+<script src="pages.js?v=20261103b"></script>
+<script>
+(() => {
+  const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const plan = LP.courtyard(document.querySelector("#ab-plan"));
+  LP.vignette(document.querySelector("#ab-art"), 131);
+  document.querySelectorAll("[data-glyph]").forEach((s) => LP.glyph(s, s.dataset.glyph));
+
+  // statement split into words that ink in on scroll
+  const h = document.querySelector("#ab-words");
+  const words = h.textContent.trim().split(/\s+/);
+  h.textContent = "";
+  words.forEach((w, i) => { const s = document.createElement("span"); s.className = "word"; s.textContent = w; h.append(s); if (i < words.length - 1) h.append(" "); });
+
+  if (RM) { document.querySelectorAll(".word").forEach((w) => (w.style.color = "var(--ink)")); return; }
+
+  // plan strokes: hidden until scrolled
+  const strokes = [...plan.querySelectorAll("path, rect")].filter((n) => !n.classList.contains("m"));
+  strokes.forEach((n) => { const len = n.getTotalLength(); n.style.strokeDasharray = `${len} ${len}`; n.style.strokeDashoffset = len; });
+  gsap.set(plan.querySelector(".m"), { scale: 0, transformOrigin: "center" });
+
+  document.addEventListener("lp:start", () => {
+    gsap.fromTo("#ab-cue", { scaleY: 0 }, { scaleY: 1, duration: 0.9, repeat: -1, ease: "power2.inOut", yoyo: true });
+    // a first stroke so the page isn't empty, then scroll draws the rest
+    gsap.to(strokes.slice(0, 2), { strokeDashoffset: 0, duration: 1.4, ease: "power2.inOut" });
+    const tl = gsap.timeline({ scrollTrigger: { trigger: "#ab-hero", start: "top top+=80", end: "+=120%", scrub: 0.8, pin: true } });
+    tl.to(strokes.slice(2), { strokeDashoffset: 0, stagger: 0.08, ease: "none", duration: 1 })
+      .to(plan.querySelector(".m"), { scale: 1, duration: 0.3, ease: "back.out(2)" })
+      .to("#ab-plan", { scale: 0.92, rotate: -4, duration: 0.6, ease: "none" }, ">-0.2");
+
+    gsap.to(".word", {
+      color: "#282828", stagger: 0.2, ease: "none",
+      scrollTrigger: { trigger: "#ab-statement", start: "top top+=80", end: "+=140%", scrub: true, pin: ".ab-pin" },
+    });
+    gsap.fromTo("#ab-art", { yPercent: 6 }, { yPercent: -6, ease: "none", scrollTrigger: { trigger: ".ab-mission", start: "top bottom", end: "bottom top", scrub: true } });
+    ScrollTrigger.create({ trigger: ".ab-mission", start: "top 75%", once: true, onEnter: () => LP.drawIn(document.querySelector("#ab-art"), { duration: 1.6, stagger: 0.01 }) });
+  }, { once: true });
+})();
+</script>
+</body>
+</html>
