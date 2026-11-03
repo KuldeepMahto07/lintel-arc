@@ -4,7 +4,7 @@
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const APP = "https://lintel-ruddy-five.vercel.app/signup";
+  const APP = "/signup";
 
   const PLANS = [
     { key: "free", name: "Free", desc: "Try Lintel on one project with the starter rules.", month: 0, year: 0, seats: null,
