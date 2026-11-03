@@ -388,3 +388,26 @@ a, button, .uc-list li i { transition-duration: .1s; }
 .sa { inset: 10px !important; }
 .uc-list ul { padding-top: 4px; }
 :root { --ink-3: rgba(40, 40, 40, .64); }
+
+/* ---- phone header menu (nav.js adds the button) ----------------------- */
+.hdr-menu { display: none; }
+@media (max-width: 760px) {
+  .hdr-logo { padding: 0 16px; font-size: 22px; }
+  .hdr-menu { display: flex; align-items: center; gap: 12px; height: 100%; padding: 0 16px; border: 0; border-left: 1px solid var(--line-2); background: none; font: 12px var(--mono); letter-spacing: .02em; color: var(--ink); cursor: pointer; }
+  .hdr-menu .hm-icon { display: grid; gap: 5px; width: 18px; }
+  .hdr-menu .hm-icon i { display: block; height: 1.5px; background: currentColor; transition: transform .35s cubic-bezier(.7, 0, .2, 1); }
+  .hdr.menu-open .hdr-menu { background: var(--ink); color: var(--paper); }
+  .hdr.menu-open .hm-icon i:first-child { transform: translateY(3.25px) rotate(45deg); }
+  .hdr.menu-open .hm-icon i:last-child { transform: translateY(-3.25px) rotate(-45deg); }
+  .hdr-nav { position: absolute; top: 100%; left: -1px; right: -1px; height: auto; max-height: calc(100vh - var(--hdr) - var(--gut) * 2); overflow-y: auto; flex-direction: column; background: var(--paper); border: 1px solid var(--line-2); border-top: 0; clip-path: inset(0 0 100% 0); visibility: hidden; transition: clip-path .4s cubic-bezier(.7, 0, .2, 1), visibility 0s .4s; }
+  .hdr.menu-open .hdr-nav { clip-path: inset(0 0 0 0); visibility: visible; transition: clip-path .4s cubic-bezier(.7, 0, .2, 1), visibility 0s; }
+  .hdr-nav a, .hdr-nav > a { width: 100%; border-left: 0; border-top: 1px solid var(--line-2); padding: 16px 18px; font-size: 13px; }
+  .hdr-nav > :first-child > a, .hdr-nav > a:first-child { border-top: 0; }
+  .hdr-nav a.has-sub::after { display: none; }
+  .hdr-cta i { position: static; margin-left: 8px; }
+  .dd { flex-direction: column; height: auto; }
+  .dd > a { height: auto; }
+  .dd-menu { position: static; clip-path: none; border: 0; border-top: 1px solid var(--line); background: rgba(40, 40, 40, .03); }
+  .dd-menu a { padding: 12px 18px 12px 34px; }
+  html.menu-lock { overflow: hidden; }
+}
