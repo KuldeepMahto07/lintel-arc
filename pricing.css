@@ -42,7 +42,7 @@
 .pr-card.featured .pc-seats .stepper { border-color: rgba(242, 241, 235, .35); }
 .pc-seats button { border: 0; background: none; color: inherit; font: 14px var(--mono); height: 30px; cursor: pointer; transition: background .2s, color .2s; }
 .pc-seats button:hover:not(:disabled) { background: var(--hot); color: #fff; }
-.pc-seats button:disabled { opacity: .3; cursor: default; }
+.pc-seats button:disabled { color: var(--ink-3); background: var(--line); cursor: not-allowed; } /* fill, ink and cursor, not opacity alone */
 .pc-seats output { display: grid; place-items: center; font: 500 13px var(--mono); border-left: 1px solid var(--line-2); border-right: 1px solid var(--line-2); }
 .pr-card.featured .pc-seats output { border-color: rgba(242, 241, 235, .35); }
 .pc-seats .total { font: 11px var(--mono); text-transform: uppercase; text-align: right; color: var(--ink-3); }
@@ -54,7 +54,7 @@
 .pc-list li { display: grid; grid-template-columns: 16px 1fr; gap: 8px; }
 .pc-list li::before { content: ""; width: 9px; height: 9px; margin-top: 4px; background: var(--ink); }
 .pr-card.featured .pc-list li::before { background: var(--hot); }
-.pc-list li.no { color: var(--ghost); }
+.pc-list li.no { color: var(--ink-3); }
 .pc-list li.no::before { background: transparent; border: 1px solid var(--ghost); }
 .pr-card.featured .pc-list li.no { color: rgba(242, 241, 235, .35); }
 
@@ -89,7 +89,7 @@
 .cmp-row > * { padding: 12px 18px; border-left: 1px solid var(--line); font-size: 14px; display: flex; align-items: center; }
 .cmp-row > :first-child { border-left: 0; color: var(--ink-2); }
 .cmp-row .y::before { content: ""; width: 10px; height: 10px; background: var(--ink); }
-.cmp-row .n { color: var(--ghost); }
+.cmp-row .n { color: var(--ink-3); }
 .cmp-row .n::before { content: "—"; }
 .cmp-row .t { font: 12px var(--mono); text-transform: uppercase; }
 .cmp-row > :nth-child(4) { background: rgba(250, 54, 0, .035); }

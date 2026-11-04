@@ -1,7 +1,10 @@
 /* Private study build. Original CSS. */
 :root {
-  --paper: #f2f1eb; --ink: #282828; --ink-2: rgba(40, 40, 40, .72); --ink-3: rgba(40, 40, 40, .45);
-  --line: rgba(40, 40, 40, .18); --line-2: rgba(40, 40, 40, .32); --hot: #fa3600; --ghost: #b4b4b0;
+  --paper: #f2f1eb; --ink: #282828; --ink-2: rgba(40, 40, 40, .72); --ink-3: rgba(40, 40, 40, .66);
+  --line: rgba(40, 40, 40, .18); --line-2: rgba(40, 40, 40, .32); --hot: #cf2c00; --ghost: #b4b4b0;
+  /* text contrast: --hot and --ink-3 reach 4.5:1 on paper (and white on --hot), --ghost-text 3:1 for large faded heads,
+     --field 3:1 for input edges; --ghost stays for fills and borders only */
+  --ghost-text: rgba(40, 40, 40, .52); --field: rgba(40, 40, 40, .56); --hot-on-ink: #ff6a3d; /* orange text on --ink, 5:1 */
   --sans: "Schibsted Grotesk", Arial, sans-serif; --mono: "Geist Mono", ui-monospace, monospace;
   --hdr: 74px; --gut: 6px;
 }
@@ -15,11 +18,12 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 body.is-loading { overflow: hidden; }
+body:not(.is-loading) .pre { display: none; } /* no script, no loader: the page shows and scrolls */
 a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; background: none; border: 0; color: inherit; }
 .lbl { font: 400 12px/1.3 var(--mono); letter-spacing: .02em; color: var(--ink-2); text-transform: uppercase; }
 .lbl.small { font-size: 11px; }
-h1, h2, h3 { font-family: var(--sans); text-transform: uppercase; letter-spacing: -.035em; line-height: .95; }
+h1, h2, h3 { font-family: var(--sans); text-transform: uppercase; letter-spacing: -.035em; line-height: 1; }
 h1 { font-size: clamp(34px, 3.5vw, 66px); font-weight: 700; }
 h2 { font-size: clamp(30px, 3vw, 54px); font-weight: 700; }
 h3 { font-size: 22px; font-weight: 700; letter-spacing: -.03em; }
@@ -54,7 +58,7 @@ i { font-style: normal; color: var(--hot); }
 section { border: 1px solid var(--line-2); border-top: 0; position: relative; }
 
 /* ===== hero ===== */
-.hero { height: calc(100vh - var(--hdr) - 180px - var(--gut)); min-height: 360px; border-top: 0; overflow: hidden; }
+.hero { height: calc(100vh - var(--hdr) - 190px - var(--gut)); height: calc(100svh - var(--hdr) - 190px - var(--gut)); min-height: 360px; border-top: 0; overflow: hidden; }
 .ruler { position: absolute; left: 34px; right: 34px; height: 10px; background: repeating-linear-gradient(90deg, var(--line-2) 0 1px, transparent 1px 8px); }
 .ruler-top { top: 12px; } .ruler-bottom { bottom: 12px; }
 .ruler-v { position: absolute; top: 34px; bottom: 34px; width: 8px; background: repeating-linear-gradient(180deg, var(--line) 0 1px, transparent 1px 8px); }
@@ -65,7 +69,7 @@ section { border: 1px solid var(--line-2); border-top: 0; position: relative; }
 .hero-art svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 
 .hero-row { display: grid; grid-template-columns: 1fr 400px 190px; min-height: 180px; }
-.hero-row h1 { padding: 30px 32px; align-self: center; }
+.hero-row h1 { padding: 30px 32px; align-self: center; font-size: clamp(30px, 3vw, 58px); line-height: 1; } /* two lines, so the headline and its action fit the first screen */
 .hero-copy { border-left: 1px solid var(--line-2); padding: 18px 16px; font-size: 16px; line-height: 1.25; }
 .hero-copy u { text-underline-offset: 3px; }
 .hero-more { border-left: 1px solid var(--line-2); padding: 18px 14px; font: 13px var(--mono); color: var(--hot); position: relative; transition: background .25s, color .25s; }
@@ -78,9 +82,9 @@ section { border: 1px solid var(--line-2); border-top: 0; position: relative; }
 .intro-art { grid-row: span 2; border-right: 1px solid var(--line-2); overflow: hidden; position: relative; }
 .intro-art svg { width: 100%; height: 100%; display: block; }
 .intro-text { padding: 32px 28px; display: flex; flex-direction: column; gap: 22px; }
-.intro-tags { display: flex; flex-direction: column; gap: 2px; font: 700 34px/1 var(--sans); letter-spacing: -.04em; color: var(--ghost); }
+.intro-tags { display: flex; flex-direction: column; gap: 2px; font: 700 34px/1 var(--sans); letter-spacing: -.04em; color: var(--ghost-text); }
 .scrub { font: 700 clamp(24px, 2.3vw, 38px)/1.02 var(--sans); letter-spacing: -.035em; color: var(--ink); }
-.scrub .w { color: var(--ghost); transition: color .2s; }
+.scrub .w { color: var(--ghost-text); transition: color .2s; }
 .btn-box { align-self: flex-start; display: inline-flex; gap: 22px; align-items: center; border: 1px solid var(--line-2); padding: 12px 14px; font: 12px var(--mono); transition: background .25s, color .25s; }
 .btn-box:hover { background: var(--ink); color: var(--paper); }
 .intro-clients { border-top: 1px solid var(--line-2); padding: 14px 18px; display: grid; gap: 14px; }
@@ -120,6 +124,8 @@ section { border: 1px solid var(--line-2); border-top: 0; position: relative; }
 .vmark { cursor: pointer; }
 .vmark rect { fill: var(--hot); transition: transform .2s; transform-box: fill-box; transform-origin: center; }
 .vmark:hover rect { transform: scale(1.15); }
+.vmark:focus-visible { outline: none !important; box-shadow: none !important; }
+.vmark:focus-visible rect { stroke: var(--ink); stroke-width: 3px; transform: scale(1.15); } /* SVG groups can't show an outline: a dark stroke instead */
 .vmark text { font: 600 10px var(--mono); fill: #fff; pointer-events: none; }
 .vmark.done rect { fill: var(--ink); }
 .vcard { position: absolute; right: 30px; top: 30px; width: 330px; background: var(--hot); color: #fff; padding: 16px 16px 14px; opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .3s, transform .3s; }
@@ -194,7 +200,7 @@ section { border: 1px solid var(--line-2); border-top: 0; position: relative; }
 .fcol a:hover, .fcol a.on { color: var(--hot); }
 .fcol p { color: var(--ink-2); }
 .fsub p { color: var(--ink-2); font-size: 14px; margin: 14px 0; }
-.fsub form { display: flex; border-top: 1px solid var(--line-2); }
+.fsub form { display: flex; border-top: 1px solid var(--field); }
 .fsub input { flex: 1; border: 0; background: none; padding: 10px 0; font: 14px var(--sans); color: var(--ink); outline: none; }
 .wordmark { display: block; width: 100%; padding: 26px 22px 6px; }
 .wordmark .wm-guide { stroke: rgba(40, 40, 40, .25); stroke-width: .8; fill: none; stroke-dasharray: 3 4; }
@@ -217,10 +223,12 @@ section { border: 1px solid var(--line-2); border-top: 0; position: relative; }
 /* ===== mouse effects ===== */
 @media (pointer: fine) { html, a, button, .vmark, .h-mark { cursor: none; } input { cursor: text; } }
 .cur { position: fixed; left: 0; top: 0; z-index: 999; pointer-events: none; }
-.cur-dot { position: absolute; width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: var(--hot); transition: width .25s, height .25s, margin .25s, border-radius .25s, background .25s; }
-.cur.link .cur-dot { width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 0; }
-.cur.drag .cur-dot { width: 2px; height: 2px; margin: -1px 0 0 -1px; }
-.cur.hide .cur-dot { width: 0; height: 0; margin: 0; }
+/* one 12px box, scaled (transform only): 6px dot at rest, 12px square on links, 2px while dragging */
+.cur-dot { position: absolute; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; background: var(--hot); transform: scale(.5); transition: transform .25s, border-radius .25s, background-color .25s; }
+.cur.link .cur-dot { transform: scale(1); border-radius: 0; }
+.cur.drag .cur-dot { transform: scale(.17); }
+.cur.hide .cur-dot { transform: scale(0); }
+@media (pointer: coarse), (hover: none), (max-width: 760px) { .cur { display: none; } }
 
 .cad { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .3s; z-index: 2; }
 .hero.cad-on .cad { opacity: 1; }
@@ -247,10 +255,10 @@ section { border: 1px solid var(--line-2); border-top: 0; position: relative; }
 /* nav dropdowns */
 .dd { position: relative; height: 100%; display: flex; }
 .dd > a { height: 100%; }
-.dd-menu { position: absolute; top: 100%; left: -1px; right: -1px; background: var(--paper); border: 1px solid var(--line-2); display: flex; flex-direction: column; clip-path: inset(0 0 100% 0); transition: clip-path .35s cubic-bezier(.7, 0, .2, 1); }
-.dd:hover .dd-menu { clip-path: inset(0 0 0 0); }
+.dd-menu { position: absolute; top: 100%; left: -1px; right: -1px; min-width: max-content; background: var(--paper); border: 1px solid var(--line-2); display: flex; flex-direction: column; clip-path: inset(0 0 100% 0); transition: clip-path .35s cubic-bezier(.7, 0, .2, 1); }
+.dd:hover .dd-menu, .dd:focus-within .dd-menu { clip-path: inset(0 0 0 0); } /* keyboard focus opens the menu too */
 .dd:hover > a { background: var(--ink); color: var(--paper); }
-.dd-menu a { width: auto; border-left: 0 !important; border-top: 1px solid var(--line); padding: 12px; font: 11.5px var(--mono); color: var(--ink-2); }
+.dd-menu a { width: auto; white-space: nowrap; border-left: 0 !important; border-top: 1px solid var(--line); padding: 12px; font: 11.5px var(--mono); color: var(--ink-2); }
 .dd-menu a:first-child { border-top: 0; }
 
 /* fill-from-bottom buttons */
@@ -282,12 +290,12 @@ section { border: 1px solid var(--line-2); border-top: 0; position: relative; }
 .ticker { border: 1px solid var(--line-2); border-top: 0; overflow: hidden; height: 30px; display: flex; align-items: center; }
 .ticker-track { display: flex; gap: 0; white-space: nowrap; animation: tick 38s linear infinite; }
 .ticker-track span { font: 11px var(--mono); color: var(--ink-2); padding: 0 26px; border-right: 1px solid var(--line); }
-.ticker-track span::before { content: '2'; color: var(--hot); margin-right: 10px; }
+.ticker-track span::before { content: ''; display: inline-block; width: 6px; height: 6px; background: var(--hot); margin-right: 10px; vertical-align: 1px; } /* drawn, not a font glyph */
 @keyframes tick { to { transform: translateX(-50%); } }
-.intro { grid-template-columns: 1.1fr 1fr; }
+@media (min-width: 1001px) { .intro { grid-template-columns: 1.1fr 1fr; } } /* desktop only: phones stack the intro (see the 1000px block) */
 .intro-text { justify-content: flex-start; padding-top: 40px; }
-.scrub { font-size: clamp(28px, 2.9vw, 50px); line-height: .98; }
-.scrub .line-mask { color: var(--ghost); }
+.scrub { font-size: clamp(28px, 2.9vw, 50px); line-height: 1; }
+.scrub .line-mask { color: var(--ghost-text); }
 .cl-head { display: flex; justify-content: space-between; align-items: center; }
 .cl-arrows button { width: 28px; height: 24px; border: 1px solid var(--line-2); margin-left: 4px; font: 12px var(--mono); }
 .cl-arrows button:hover { background: var(--ink); color: var(--paper); }
@@ -295,7 +303,8 @@ section { border: 1px solid var(--line-2); border-top: 0; position: relative; }
 .cl-track { display: flex; transition: transform .6s cubic-bezier(.7,0,.2,1); }
 .cl { flex: 0 0 25%; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 18px 0 14px; border-left: 1px solid var(--line); }
 .cl svg { width: 26px; height: 26px; }
-.cl span { font: 700 13px var(--sans); letter-spacing: -.02em; }
+.cl span { font: 700 13px var(--sans); letter-spacing: -.02em; text-align: center; overflow-wrap: anywhere; padding: 0 6px; }
+.cl small { display: block; font: 400 11px var(--mono); letter-spacing: 0; color: var(--ink-2); }
 .pg-ico { width: 150px; height: 130px; margin: 30px 0 auto; }
 .pg-ico svg { width: 100%; height: 100%; }
 h3.mask { overflow: hidden; } h3.mask > span { display: block; }
@@ -411,3 +420,33 @@ a, button, .uc-list li i { transition-duration: .1s; }
   .dd-menu a { padding: 12px 18px 12px 34px; }
   html.menu-lock { overflow: hidden; }
 }
+
+/* ===== keyboard focus: instant and two-tone, so it shows on paper, on ink and on the orange buttons ===== */
+:focus-visible { outline: 2px solid var(--ink) !important; outline-offset: 2px !important; box-shadow: 0 0 0 2px var(--paper) !important; }
+.ct-field:focus-within, .fsub form:focus-within { outline: 2px solid var(--ink); outline-offset: -2px; }
+.ct-field input:focus-visible, .ct-field textarea:focus-visible, .fsub input:focus-visible { outline: none !important; box-shadow: none !important; }
+
+
+/* ===== button labels stay on one line; their groups wrap instead ===== */
+.btn-primary, .btn-secondary, .btn-box, .hero-more, .hdr-cta, .pc-cta, .ct-submit { white-space: nowrap; }
+
+/* ===== phones: grids may shrink below their content, and narrow ones stack ===== */
+@media (max-width: 1000px) { .problem-grid, .why-grid, .cta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) {
+  .problem-grid, .pl-top { grid-template-columns: minmax(0, 1fr); }
+  .problem-grid article { border-left: 0; border-top: 1px solid var(--line-2); min-height: 0; }
+  .problem-grid article:first-child { border-top: 0; }
+}
+@media (max-width: 760px) {
+  .pl-row { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .pl-row > * { border-right: 0; border-bottom: 1px solid var(--line); }
+  .pl-art { min-height: 300px; }
+  .pl-row > :last-child { border-bottom: 0; }
+}
+@media (max-width: 760px) {
+  .why-cols { grid-template-columns: minmax(0, 1fr); }
+  .why-right { border-left: 0; padding-top: 0; }
+  .why-left, .why-right { transform: none !important; } /* the opposed-column parallax only makes sense side by side */
+}
+@media (max-width: 760px) { .side-card { right: 8px; max-width: calc(100% - 16px); } } /* the overhanging note stays on screen */
+h1, h2, h3 { overflow-wrap: break-word; min-width: 0; } /* a long word breaks instead of running off a phone screen */

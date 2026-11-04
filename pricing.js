@@ -13,7 +13,7 @@
     { key: "pro", name: "Pro", desc: "For a designer or small team working on live projects.", month: 39, year: 390, seats: [1, 1],
       cta: ["Start 14-day trial", APP],
       list: [["Unlimited projects", 1], ["Apply approved changes in Rhino", 1], ["Custom rules and project overrides", 1], ["300 assistant messages per seat", 1], ["Email support", 1], ["Two-approval mode", 0]] },
-    { key: "firm", name: "Firm", desc: "For offices that sign off together and keep the record.", month: 99, year: 990, seats: [3, 3], featured: "MOST CHOSEN",
+    { key: "firm", name: "Firm", desc: "For offices that sign off together and keep the record.", month: 99, year: 990, seats: [3, 3], featured: "FOR TEAMS",
       cta: ["Start 14-day trial", APP],
       list: [["Everything in Pro", 1], ["Two-approval mode", 1], ["Audit log CSV export", 1], ["1,000 assistant messages per seat", 1], ["Priority support", 1], ["Viewers are always free", 1]] },
     { key: "ent", name: "Enterprise", desc: "For groups that need single sign-on or their own hosting.", month: null, year: null, seats: null,

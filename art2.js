@@ -72,10 +72,11 @@ const ART2 = (() => {
     const nodes = pts.map(([x, y]) => el("rect", { x: x - 6, y: y - 6, width: 12, height: 12, fill: HOT, stroke: "none" }, s));
     return { lines, nodes };
   }
-  // generic invented client marks (not real companies)
-  const clients = [["NORTHFORM", "M4 18L12 4L20 18Z"], ["ATELIER 9", "M4 4H20V20H4Z M4 12H20"], ["PLOT & CO", "M12 3A9 9 0 1 0 12.1 3Z M12 3V21"], ["BRICKWELL", "M3 6H21M3 12H21M3 18H21M9 6V12M15 12V18"], ["VESTA", "M4 4L12 20L20 4"], ["OAKLINE", "M12 2V22M5 9L12 2L19 9"]];
+  // the CAD apps Lintel runs in: plain names with simple original marks, never product logos or invented customers
+  const clients = [["RHINO 8", "M4 18L12 4L20 18Z", ""], ["REVIT", "M4 4H20V20H4Z M4 12H20", "beta"], ["ARCHICAD", "M12 3A9 9 0 1 0 12.1 3Z M12 3V21", "beta"],
+    ["SKETCHUP", "M3 6H21M3 12H21M3 18H21M9 6V12M15 12V18", "beta"], ["AUTOCAD", "M4 4L12 20L20 4", "beta"], ["VECTORWORKS", "M12 2V22M5 9L12 2L19 9", "beta"]];
   function clientMarks(host) {
-    host.innerHTML = clients.map(([n, d]) => `<div class="cl"><svg viewBox="0 0 24 24" fill="none" stroke="#282828" stroke-width="1.4"><path d="${d}"/></svg><span>${n}</span></div>`).join("");
+    host.innerHTML = clients.map(([n, d, tag]) => `<div class="cl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="${d}"/></svg><span>${n}${tag ? `<small> ${tag}</small>` : ""}</span></div>`).join("");
   }
   return { problemIcon, miniPlan, section, sheets, network, clientMarks };
 })();

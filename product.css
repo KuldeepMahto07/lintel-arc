@@ -3,6 +3,7 @@
 /* ===== HERO PRODUCT ===== */
 .hero-product {
   min-height: calc(100vh - var(--hdr) - var(--gut) * 2);
+  min-height: calc(100svh - var(--hdr) - var(--gut) * 2);
   border-top: 0;
   display: flex;
   flex-direction: column;
@@ -30,7 +31,7 @@
 
 .hp-content h1 {
   font-size: clamp(34px, 3.6vw, 62px);
-  line-height: 0.96;
+  line-height: 1;
   letter-spacing: -0.04em;
   font-weight: 700;
   text-transform: uppercase;
@@ -47,6 +48,7 @@
 
 .hp-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   align-items: center;
   margin-top: 12px;
@@ -310,6 +312,7 @@
 .cw-btn-ok {
   background: var(--ink);
   color: var(--paper);
+  white-space: nowrap;
   font: 600 11px var(--mono);
   padding: 6px 12px;
   border: 1px solid var(--ink);
@@ -348,7 +351,7 @@
   border: 1px solid var(--line-2);
   background: rgba(255, 255, 255, 0.6);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 .cw-pill:hover {
   background: var(--ink);
@@ -368,7 +371,7 @@
 .cw-input {
   flex: 1;
   background: #fff;
-  border: 1px solid var(--line-2);
+  border: 1px solid var(--field);
   padding: 8px 12px;
   font: 12.5px var(--sans);
   color: var(--ink);
@@ -515,7 +518,7 @@
   background: var(--ink);
 }
 .feat-tab-btn.active .tab-num {
-  color: var(--hot);
+  color: var(--hot-on-ink);
 }
 .feat-tab-btn.active .tab-title {
   color: var(--paper);

@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Lintel · Works inside your drawing tools (private study build)</title>
+  <meta name="description" content="Lintel checks your drawings against your office standards inside the CAD app, drafts the fix, and only edits the model once you approve.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261103c">
+  <link rel="stylesheet" href="style.css?v=20261105h">
 </head>
-<body class="is-loading">
+<body>
+<script>document.body.classList.add("is-loading");</script>
 <!-- Private, local study build. Not for publication. All text, graphics and code are original. -->
 
 <!-- ===== PRELOADER ===== -->
@@ -38,7 +40,7 @@
 <!-- ===== HEADER ===== -->
 <header class="hdr">
   <a class="hdr-logo" href="#top" aria-label="Lintel">
-    <svg viewBox="0 0 40 40" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h32v6H4z"/><path d="M8 16v20M32 16v20M14 16v20M26 16v20"/><path d="M4 10l6-6h32l-6 6M36 16l6-6v6"/></svg>
+    <svg aria-hidden="true" viewBox="0 0 40 40" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h32v6H4z"/><path d="M8 16v20M32 16v20M14 16v20M26 16v20"/><path d="M4 10l6-6h32l-6 6M36 16l6-6v6"/></svg>
     <span>LINTEL</span>
   </a>
   <nav class="hdr-nav">
@@ -63,7 +65,7 @@
   </div>
   <div class="hcard"><button class="hcard-x" aria-label="Close">×</button><div class="hcard-code"></div><div class="hcard-title"></div></div>
   <div class="hero-art">
-    <svg id="hero-svg" viewBox="70 70 860 345" preserveAspectRatio="xMidYMid meet"></svg>
+    <svg aria-hidden="true" id="hero-svg" viewBox="70 70 860 345" preserveAspectRatio="xMidYMid meet"></svg>
   </div>
 </section>
 <section class="hero-row">
@@ -76,13 +78,13 @@
 
 <!-- ===== INTRO (tower + statement) ===== -->
 <section class="intro" id="intro">
-  <div class="intro-art"><svg id="tower-svg" viewBox="0 0 600 560"></svg></div>
+  <div class="intro-art"><svg aria-hidden="true" id="tower-svg" viewBox="0 0 600 560"></svg></div>
   <div class="intro-text">
     <p class="scrub">THE BORING HALF OF DRAWING SHOULDN'T SWALLOW YOUR WEEK. LINTEL TAKES THE FIDDLY, REPEATED EDITS SO YOUR HEAD STAYS ON THE BUILDING, NOT THE BUTTONS.</p>
     <a class="btn-box" href="#problem">READ MORE <i>→</i></a>
   </div>
   <div class="intro-clients">
-    <div class="cl-head"><span class="lbl">STUDIOS</span><span class="cl-arrows"><button class="cl-prev" aria-label="Previous">←</button><button class="cl-next" aria-label="Next">→</button></span></div>
+    <div class="cl-head"><span class="lbl">CAD APPS</span><span class="cl-arrows"><button class="cl-prev" aria-label="Previous">←</button><button class="cl-next" aria-label="Next">→</button></span></div>
     <div class="cl-view"><div class="cl-track" id="clients"></div></div>
     <div class="lbl small">RUNS INSIDE THE APPS YOUR TEAM ALREADY OPENS EVERY MORNING: RHINO 8, WITH REVIT, ARCHICAD, SKETCHUP, AUTOCAD AND VECTORWORKS IN BETA.</div>
   </div>
@@ -107,7 +109,7 @@
 <section class="map" id="map">
   <div class="map-pin">
     <div class="map-words"><span class="mw mw1">ALWAYS ON YOUR SIDE</span><span class="mw mw2">FROM FIRST LINE TO PERMIT</span></div>
-    <svg id="plan-svg" viewBox="150 50 640 620"></svg>
+    <svg aria-hidden="true" id="plan-svg" viewBox="150 50 640 620"></svg>
     <div class="map-box">
       <div class="map-box-h">HOW IT STARTS</div>
       <p class="map-step">Drafting eats hours: modelling, coordinating and tidying up, all of it pulling you away from the design.</p>
@@ -152,7 +154,7 @@
       <article class="stage"><div class="stage-art" id="st-sheets"></div><div class="stage-cap"><b>03 DO</b><span>With your OK, it makes the edit in the model.</span></div></article>
     </div>
     <div class="why-col why-right">
-      <article class="stage"><div class="stage-art plan-card-art"><svg viewBox="0 0 420 320" fill="none" stroke="#3a3a3a"><path d="M40 40H380V280H40Z M40 150H220 M220 40V280 M300 150H380 M220 210H300" stroke-width="6"/><rect class="corr" x="226" y="156" width="150" height="48" fill="#fa3600" stroke="none" opacity=".85"/></svg><div class="side-card"><div class="sc-h">LINTEL</div><small>RULE §1020</small><b>CORRIDOR NARROWER<br>THAN YOUR MINIMUM</b><p>1 000 mm against 1 118 mm. Move the south wall or lower the occupant load.</p></div></div><div class="stage-cap"><b>02 FLAG</b><span>It marks problems and suggests fixes in plain words.</span></div></article>
+      <article class="stage"><div class="stage-art plan-card-art"><svg aria-hidden="true" viewBox="0 0 420 320" fill="none" stroke="#3a3a3a"><path d="M40 40H380V280H40Z M40 150H220 M220 40V280 M300 150H380 M220 210H300" stroke-width="6"/><rect class="corr" x="226" y="156" width="150" height="48" fill="#fa3600" stroke="none" opacity=".85"/></svg><div class="side-card"><div class="sc-h">LINTEL</div><small>RULE §1020</small><b>CORRIDOR NARROWER<br>THAN YOUR MINIMUM</b><p>1 000 mm against 1 118 mm. Move the south wall or lower the occupant load.</p></div></div><div class="stage-cap"><b>02 FLAG</b><span>It marks problems and suggests fixes in plain words.</span></div></article>
       <article class="stage"><div class="stage-art" id="st-network"><div class="net-tag">LEARNING YOUR STANDARDS<ul><li>Door widths: 900 mm</li><li>Exam rooms: 11 m²</li><li>Stair runs: 20 risers</li></ul></div></div><div class="stage-cap"><b>04 REMEMBER</b><span>It picks up your office standards and gets sharper over time.</span></div></article>
     </div>
   </div>
@@ -160,7 +162,7 @@
 
 <!-- ===== USE CASES ===== -->
 <section class="usecase" id="usecase">
-  <div class="uc-art"><svg id="slab-svg" viewBox="0 0 640 620"></svg></div>
+  <div class="uc-art"><svg aria-hidden="true" id="slab-svg" viewBox="0 0 640 620"></svg></div>
   <div class="uc-list">
     <div class="lbl">WHO IT'S FOR</div>
     <h2 class="split">MADE FOR THE PEOPLE<br>DRAWING THE BUILDING</h2>
@@ -179,7 +181,7 @@
 
 <!-- ===== CTA + FOOTER ===== -->
 <section class="cta" id="cta">
-  <div class="cta-art"><svg id="fort-svg" viewBox="0 0 700 330"></svg></div>
+  <div class="cta-art"><svg aria-hidden="true" id="fort-svg" viewBox="0 0 700 330"></svg></div>
   <div class="cta-grid">
     <h2 class="cta-h">AN AI AGENT THAT LIVES INSIDE YOUR CAD MODEL</h2>
     <div class="fcol"><div class="lbl">COMPANY</div><a class="on" href="#top">Home</a><a href="about.html">About us</a><a href="contact.html">Contact us</a></div>
@@ -200,7 +202,7 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
 <script src="art.js?v=f8f3b11a"></script>
-<script src="art2.js?v=73b60f24"></script>
+<script src="art2.js?v=20261105h"></script>
 <script src="main.js?v=20261103b"></script>
 <script src="mouse.js?v=20261103b"></script>
 <script src="forms.js?v=20261104"></script>

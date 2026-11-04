@@ -5,7 +5,7 @@ document.fonts.ready.then(() => {
   const NS = "http://www.w3.org/2000/svg";
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   gsap.registerPlugin(ScrollTrigger, SplitText);
-  const GHOST = "#b4b4b0", INK = "#282828";
+  const GHOST = "rgba(40, 40, 40, .52)", INK = "#282828"; // GHOST matches --ghost-text: faded but readable (3:1)
 
   // ---- artwork -------------------------------------------------------------
   const hero = ART.hero($("#hero-svg"));
