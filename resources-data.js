@@ -109,10 +109,10 @@ window.LINTEL_POSTS = [
   {
     slug: "sample-clinic", cat: "field-notes", date: "2026-09-02", read: 4, seed: 97,
     title: "What the sample clinic teaches",
-    excerpt: "Nine issues in nineteen elements. A short tour of the model every new Lintel firm can load in one click.",
+    excerpt: "Nine issues in twenty-one elements. A short tour of the model every new Lintel firm can load in one click.",
     body: [
       "Every new firm in Lintel can load the sample clinic: a single-storey plan with a lobby, a long corridor, exam rooms, an accessible WC, an on-call room and an office.",
-      "It is small on purpose. Nineteen elements, nine issues against the starter rules, and every kind of issue Lintel knows how to find.",
+      "It is small on purpose. Twenty-one elements, nine issues against the starter rules, and every kind of issue Lintel knows how to find.",
       "## What you'll see",
       "Two doors under the minimum clear width, both fixable in one click. A stair whose riser is too tall, where the fix recalculates the riser count. A corridor narrower than required and two rooms beyond the travel distance limit, all advice only. Two rooms under area, one by a firm standard rather than a code value.",
       "> Propose the door fix, approve it, and watch the issue disappear on the next sync.",
