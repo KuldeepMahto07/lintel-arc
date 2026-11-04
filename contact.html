@@ -79,11 +79,11 @@
     <div class="fsub">
       <div class="lbl">NEW NOTES BY EMAIL</div>
       <p>One short note when something new is published. No other mail.</p>
-      <form onsubmit="event.preventDefault();this.querySelector('input').value='';this.querySelector('input').placeholder='Thanks, noted.';"><input type="email" placeholder="Your email" aria-label="Email" required><button>→</button></form>
+      <form data-signup="notes" data-thanks="Thanks, noted."><input type="email" placeholder="Your email" aria-label="Email" required><button>→</button></form>
     </div>
     <div class="fcol"><div class="lbl">STUDIO</div><p>Drawn and coded locally.<br>Study build, not published.</p></div>
     <div class="fcol"><div class="lbl">SAY HELLO</div><p>hello@lintel.example</p></div>
-    <div class="fcol"><div class="lbl">HOSTS</div><p>Rhino 8 (active)<br>Revit &amp; ArchiCAD (next)</p></div>
+    <div class="fcol"><div class="lbl">HOSTS</div><p>Rhino 8<br>Revit, ArchiCAD, SketchUp, AutoCAD, Vectorworks (beta)</p></div>
   </div>
   <svg class="wordmark" viewBox="0 0 1200 230" aria-label="LINTEL"></svg>
   <div class="foot-base"><span>©2026 LINTEL. PRIVATE STUDY BUILD.</span><span>RULE CHECKS · APPROVALS · AUDIT</span></div>
@@ -121,7 +121,7 @@
     gsap.fromTo(f, { x: -6 }, { x: 0, duration: 0.5, ease: "elastic.out(1, 0.3)" });
   };
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     let ok = true;
     fields.forEach((f) => {
@@ -130,7 +130,19 @@
       else if (input.type === "email" && input.value && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(input.value)) { fail(f, "Check the address"); ok = false; }
     });
     if (!ok) return;
-    // This study build has no mail backend: the message is not sent anywhere.
+    const submit = form.querySelector(".ct-submit");
+    submit.disabled = true;
+    submit.querySelector("span").textContent = "Sending…";
+    try {
+      await window.lintelSend({ email: form.email.value.trim(), name: `${form.first.value.trim()} ${form.last.value.trim()}`,
+                                firm: form.firm.value.trim(), host: form.host.value.trim(), message: form.message.value.trim() });
+    } catch (err) {
+      submit.querySelector("span").textContent = err.message;
+      return;
+    } finally {
+      submit.disabled = false;
+    }
+    submit.querySelector("span").textContent = "Send message";
     document.querySelector("#ct-name").textContent = form.first.value.trim().toUpperCase();
     const parts = [...fields, form.querySelector(".ct-submit")];
     gsap.to(parts, { autoAlpha: 0, y: -12, duration: 0.35, stagger: 0.03, ease: "power2.in", onComplete: () => {
@@ -150,6 +162,7 @@
   });
 })();
 </script>
+<script src="forms.js?v=20261104"></script>
 <script src="nav.js?v=20261103"></script>
 </body>
 </html>
