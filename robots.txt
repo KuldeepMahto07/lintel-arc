@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /app
+Disallow: /api/
+Disallow: /invite/
+Disallow: /reset
+
+Sitemap: https://lintel-arc-4icn.vercel.app/sitemap.xml
